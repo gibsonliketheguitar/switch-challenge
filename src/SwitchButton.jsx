@@ -2,6 +2,7 @@ import { cloneElement, useState } from 'react'
 import { GridIcon, RowsIcon } from '@radix-ui/react-icons'
 import * as Switch from '@radix-ui/react-switch';
 import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
+import { twJoin } from 'tailwind-merge'
 
 
 const GRID = 'grid' //state-uncheck
@@ -37,9 +38,15 @@ export default function SwitchButton(props) {
         value={toggle}
         onCheckedChange={handleCheckChange}
       >
-        <div className='flex justify-between p-[1px] bg-dark-linear rounded-xl'>
+        <div className={twJoin(
+          'flex relative p-[1px] bg-dark-linear rounded-xl',
+          toggle === LIST ? 'justify-start' : 'justify-end'
+        )}>
           <Icon id='grid' visible={toggle === LIST} icon={<GridIcon />} />
-          <Switch.Thumb className="w-[14px] h-[14px] bg-white rounded-full transition-transform duration-1000 translate-x-0.5 will-change-transform data-[state=checked]:translate-x-[-.5px] data-[state=unchecked]:translate-x-[.5px]" />
+          <Switch.Thumb className={twJoin(
+            "absolute left-0 w-[14px] h-[14px] bg-white rounded-full",
+            "duration-500 transition-transform translate-x-0.5 will-change-transform data-[state=checked]:translate-x-[21px]"
+          )}/>
           <Icon id='list' visible={toggle === GRID} icon={<RowsIcon />} />
         </div>
       </Switch.Root>
