@@ -33,7 +33,7 @@ export default function SwitchButton(props) {
 
 
   return (
-    <div className="flex w-auto justify-between items-center bg-light-dark-linear rounded-xl">
+    <div className="flex w-auto justify-between items-center bg-gradient-to-tr from-outer-start to-outer-end rounded-xl">
       <Switch.Root
         id='layout'
         disabled={disabled}
@@ -41,17 +41,18 @@ export default function SwitchButton(props) {
         onCheckedChange={handleCheckChange}
         value={toggle}
       >
-        <div className='flex relative justify-between p-[1px] bg-dark-linear rounded-xl'>
+        <div className='flex relative justify-between p-[1px] bg-gradient-to-tr from-inner-start to-inner-end rounded-xl'>
           <Icon
             id='grid'
             visible={toggle === LIST}
             icon={<GridIcon />}
           />
           <Switch.Thumb className={twJoin(
-            color === DEFAULT_COLOR ? 'bg-blue-500' : 'bg-red-500',
-            "absolute left-0 w-[14px] h-[14px] rounded-full",
-            "transition-transform translate-x-[1px] will-change-transform data-[state=checked]:translate-x-[21px] duration-500 ease-out"
-          )} />
+            "absolute left-0 w-[14px] h-[14px] border-solid border-[1px] rounded-full",
+            "transition-transform translate-x-[1px] will-change-transform data-[state=checked]:translate-x-[21px] duration-500 ease-out",
+            color === DEFAULT_COLOR ? 'bg-dark-blue border-light-blue' : 'bg-dark-red bg-border-light-red',
+          )}>
+          </Switch.Thumb>
           <Icon
             id='list'
             visible={toggle === GRID}
