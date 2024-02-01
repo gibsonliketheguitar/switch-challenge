@@ -6,7 +6,7 @@ const LIST = 'list'
 
 function App() {
   return (
-    <SwitchButton color={'green'} state={'grid'} />
+    <SwitchButton color={'blue'} state={'grid'} />
   )
 }
 
