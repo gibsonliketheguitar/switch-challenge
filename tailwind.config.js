@@ -22,9 +22,6 @@ export default {
          'custom-red': '0 0 20px 10px rgba(214, 69, 91, .3)',
          'custom-blue': '0 0 20px 10px rgba(64, 98, 221, .3)'
       },
-      borderRadius: {
-        'custom-checked': ''
-      },
     }
 
 ,

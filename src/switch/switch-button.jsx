@@ -1,4 +1,3 @@
-import { cloneElement, useState } from 'react'
 import { GridIcon, RowsIcon } from '@radix-ui/react-icons'
 import * as Switch from '@radix-ui/react-switch';
 import { SwitchIcon as Icon } from './switch-icon';
@@ -17,30 +16,23 @@ export default function SwitchButton(props) {
     disabled = false,
     color = 'blue',
     state = 'grid',
+    handleToggleState,
   } = props
-
-  const [toggle, setToggle] = useState(state)
-  const handleCheckChange = () => {
-    setToggle(prev => {
-      if (prev === GRID) return LIST
-      return GRID
-    })
-  }
 
   return (
     <div className="flex w-auto justify-between items-center bg-gradient-to-tr from-outer-start to-outer-end rounded-xl">
       <Switch.Root
         id='layout'
         disabled={disabled}
-        checked={toggle === LIST}
+        checked={state === LIST}
         className="w-[44px] h-[22px] py-[3px] px-1"
-        onCheckedChange={handleCheckChange}
-        value={toggle}
+        onCheckedChange={handleToggleState}
+        value={state}
       >
         <div className='flex relative justify-between p-[1px] bg-gradient-to-tr from-inner-start to-inner-end rounded-xl'>
           <Icon
             id='grid'
-            visible={toggle === LIST}
+            visible={state === LIST}
             icon={<GridIcon />}
           />
           <Switch.Thumb className={twJoin(
@@ -52,13 +44,14 @@ export default function SwitchButton(props) {
               : 'bg-gradient-to-tr from-light-red to-dark-red shadow-custom-red'
           )}>
             <div className={twJoin(
-              'w-[12px] h-[12px] bg-gradient-to-tr from-dark-blue to-light-blue rounded-full',
-               toggle === LIST && 'transition duration-300 ease-out w-[8px] rounded-l-[8px] rounded-r-[20px]'
-            )}/>
+              'w-[12px] h-[12px] bg-gradient-to-tr rounded-full',
+              state === LIST && 'transition duration-300 ease-out w-[8px] rounded-l-[8px] rounded-r-[20px]',
+              color === DEFAULT_COLOR ? 'from-dark-blue to-light-blue' : 'from-dark-red to-light-red'
+            )} />
           </Switch.Thumb>
           <Icon
             id='list'
-            visible={toggle === GRID}
+            visible={state === GRID}
             icon={<RowsIcon />}
           />
         </div>
