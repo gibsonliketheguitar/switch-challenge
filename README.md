@@ -1,12 +1,15 @@
 # React + Vite + TailwindCSS + Radix-UI
 
 Over engineered Switch button. Guess and ask me how long it took to implement.
+On actual app, you'll need to zoom in to savor the details
 
 ## LIVE LINK
 https://switch-challenge-three.vercel.app
 
+## Video Demo
+https://github.com/gibsonliketheguitar/switch-challenge/assets/66423127/2c4841d0-e17f-4782-911d-819c3362aa55
 
-https://github.com/gibsonliketheguitar/switch-challenge/assets/66423127/8b36df81-100f-443c-ba85-5c2b642efdae
+
 
 
 Currently, two official plugins are available:
