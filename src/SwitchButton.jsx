@@ -12,10 +12,7 @@ const LIST = 'list' //data-check
 /*
   unchecked:  [ ( ) LIST ] 
   checked     [GRID ( ) ]
-
-
-  */
-
+*/
 export default function SwitchButton(props) {
   const {
     disabled = false,
@@ -30,7 +27,6 @@ export default function SwitchButton(props) {
       return GRID
     })
   }
-
 
   return (
     <div className="flex w-auto justify-between items-center bg-gradient-to-tr from-outer-start to-outer-end rounded-xl">
@@ -48,9 +44,11 @@ export default function SwitchButton(props) {
             icon={<GridIcon />}
           />
           <Switch.Thumb className={twJoin(
-            "absolute left-0 w-[14px] h-[14px] border-solid border-[1px] rounded-full",
+            "absolute left-0 w-[14px] h-[14px] border-solid border-[1px] shadow rounded-full",
             "transition-transform translate-x-[1px] will-change-transform data-[state=checked]:translate-x-[21px] duration-500 ease-out",
-            color === DEFAULT_COLOR ? 'bg-dark-blue border-light-blue' : 'bg-dark-red bg-border-light-red',
+            color === DEFAULT_COLOR
+              ? 'bg-dark-blue border-light-blue shadow-custom-blue'
+              : 'bg-dark-red border-light-red shadow-custom-red'
           )}>
           </Switch.Thumb>
           <Icon
@@ -63,7 +61,6 @@ export default function SwitchButton(props) {
     </div>
   )
 }
-
 function Icon(props) {
   const {
     id,
