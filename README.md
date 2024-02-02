@@ -1,6 +1,13 @@
-# React + Vite
+# React + Vite + TailwindCSS + Radix-UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Over engineered Switch button. Guess and ask me how long it took to implement.
+
+## LIVE LINK
+https://switch-challenge-three.vercel.app
+
+
+https://github.com/gibsonliketheguitar/switch-challenge/assets/66423127/8b36df81-100f-443c-ba85-5c2b642efdae
+
 
 Currently, two official plugins are available:
 
