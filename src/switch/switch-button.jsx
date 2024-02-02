@@ -1,9 +1,8 @@
 import { cloneElement, useState } from 'react'
 import { GridIcon, RowsIcon } from '@radix-ui/react-icons'
 import * as Switch from '@radix-ui/react-switch';
-import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
+import { SwitchIcon as Icon } from './switch-icon';
 import { twJoin } from 'tailwind-merge'
-
 
 const DEFAULT_COLOR = 'blue'
 const GRID = 'grid' //state-uncheck
@@ -33,6 +32,7 @@ export default function SwitchButton(props) {
       <Switch.Root
         id='layout'
         disabled={disabled}
+        checked={toggle === LIST}
         className="w-[44px] h-[22px] py-[3px] px-1"
         onCheckedChange={handleCheckChange}
         value={toggle}
@@ -59,21 +59,5 @@ export default function SwitchButton(props) {
         </div>
       </Switch.Root>
     </div>
-  )
-}
-function Icon(props) {
-  const {
-    id,
-    visible = false,
-    icon
-  } = props
-  return (
-    <span className={twJoin(
-      !visible && 'transition-opacity duration-300 ease-in opacity-0',
-      'flex justify-center items-center',
-    )}>
-      <VisuallyHidden.Root>{id} Icon</VisuallyHidden.Root>
-      {cloneElement(icon, { className: 'm-[1px] mx-[2px]', height: '12px', width: '12px', color: 'white' })}
-    </span>
   )
 }
