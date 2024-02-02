@@ -7,7 +7,6 @@ export function SwitchIcon(props) {
     id,
     visible = false,
     icon,
-    invert = false,
   } = props
 
   return (
