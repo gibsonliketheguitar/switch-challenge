@@ -6,16 +6,17 @@ export function SwitchIcon(props) {
   const {
     id,
     visible = false,
-    icon
+    icon,
+    invert = false,
   } = props
 
   return (
     <span className={twJoin(
+      'flex justify-center items-center mx-[1px]',
       !visible && 'transition-opacity duration-300 ease-in opacity-0',
-      'flex justify-center items-center',
     )}>
       <VisuallyHidden.Root>{id} Icon</VisuallyHidden.Root>
-      {cloneElement(icon, { className: 'm-[1px] mx-[2px]', height: '12px', width: '12px', color: 'white' })}
+      {cloneElement(icon, { style:{ height: '14px', width: '14px'} })}
     </span>
   )
 }

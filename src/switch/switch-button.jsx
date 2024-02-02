@@ -1,6 +1,7 @@
-import { GridIcon, RowsIcon } from '@radix-ui/react-icons'
 import * as Switch from '@radix-ui/react-switch';
 import { SwitchIcon as Icon } from './switch-icon';
+import { default as GridIcon }  from '@mui/icons-material/GridViewRounded';
+import { default as ListIcon } from '@mui/icons-material/ViewHeadlineRounded';
 import { twJoin } from 'tailwind-merge'
 
 const DEFAULT_COLOR = 'blue'
@@ -34,6 +35,7 @@ export default function SwitchButton(props) {
             id='grid'
             visible={state === LIST}
             icon={<GridIcon />}
+            invert={true}
           />
           <Switch.Thumb className={twJoin(
             "absolute left-0 flex justify-center items-center w-[14px] h-[14px] rounded-full",
@@ -52,7 +54,7 @@ export default function SwitchButton(props) {
           <Icon
             id='list'
             visible={state === GRID}
-            icon={<RowsIcon />}
+            icon={<ListIcon />}
           />
         </div>
       </Switch.Root>

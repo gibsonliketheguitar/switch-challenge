@@ -11,7 +11,6 @@ function App() {
     })
   }
 
-
   const [state, setState] = useState('grid')
   const handleToggleState = () => {
     setState(prev => {
